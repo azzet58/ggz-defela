@@ -1,1 +1,34 @@
 @import "tailwindcss";
+
+/* Merkkleuren, overgenomen uit de mockups. */
+@theme {
+  --color-brand: #1f6a7a; /* knoppen, links, donkere vlakken */
+  --color-brand-logo: #2a7a8c; /* woordmerk */
+  --color-accent: #1f9aa0; /* actieve navigatie, kaartranden */
+  --color-ocean: #1e6fa8;
+  --color-ink: #14313a; /* hoofdtekst */
+  --color-muted: #33505a; /* lopende tekst */
+  --color-subtle: #4a6670; /* plaatshouders en bijschriften */
+  --color-mint: #eaf4f5; /* lichte achtergrondvlakken */
+  --color-line: #d5e5e8; /* randen en scheidingslijnen */
+  --color-field: #9db8bd; /* randen van invoervelden */
+  --color-deep: #0f3b46; /* footer */
+  --color-deep-text: #e6f1f2;
+  --color-deep-muted: #c9dee1;
+  --color-deep-mint: #8fd3cf;
+  --color-deep-sky: #6fb1e0;
+}
+
+/* Lettertypen komen uit next/font (zie app/layout.tsx). */
+@theme inline {
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+}
+
+@layer base {
+  /* Zichtbare focus voor toetsenbordgebruikers. */
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
