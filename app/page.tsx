@@ -1,7 +1,13 @@
-export default function Home() {
+import { Complaints } from "@/components/home/complaints";
+import { Hero } from "@/components/home/hero";
+import { EmergencyNotice } from "@/components/emergency-notice";
+
+export default function HomePage() {
   return (
-    <main>
-      <h1>My App</h1>
-    </main>
+    <>
+      <Hero />
+      <EmergencyNotice />
+      <Complaints />
+    </>
   );
 }
