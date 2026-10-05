@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Figtree, Fraunces } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { site, siteUrl } from "@/lib/site";
+import { allowIndexing, site, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const figtree = Figtree({
@@ -19,6 +19,9 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  robots: allowIndexing
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
   title: {
     default: `${site.name} | Psychologiepraktijk voor basis-GGZ in ${site.city}`,
     template: `%s | ${site.name}`,

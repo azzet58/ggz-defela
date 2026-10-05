@@ -69,3 +69,9 @@ export const footerNav: NavItem[] = mainNav.filter((item) => item.href !== "/");
 export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
 ).replace(/\/$/, "");
+
+/**
+ * Zoekmachines mogen de site pas indexeren als NEXT_PUBLIC_ALLOW_INDEXING=true.
+ * Zet dit pas aan bij de echte livegang, als alle plaatshouders vervangen zijn.
+ */
+export const allowIndexing = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
