@@ -64,3 +64,8 @@ export const signupLink: NavItem = { label: "Aanmelden", href: "/contact" };
 
 /** Navigatiekolom in de footer: het hoofdmenu zonder Home. */
 export const footerNav: NavItem[] = mainNav.filter((item) => item.href !== "/");
+
+/** Basis-URL van de live website, nodig voor sitemap en deelvoorbeelden. */
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+).replace(/\/$/, "");

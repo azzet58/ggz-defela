@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Figtree, Fraunces } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { site } from "@/lib/site";
+import { site, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const figtree = Figtree({
@@ -18,11 +18,19 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: `${site.name} | Psychologiepraktijk voor basis-GGZ in ${site.city}`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  openGraph: {
+    type: "website",
+    locale: "nl_NL",
+    siteName: site.name,
+    title: `${site.name} | Psychologiepraktijk voor basis-GGZ in ${site.city}`,
+    description: site.description,
+  },
 };
 
 export default function RootLayout({
